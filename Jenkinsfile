@@ -15,8 +15,8 @@ pipeline {
                     echo "Building..."
                     node --version
                     npm --version
-                    npm ci
-                    npm run build
+                    npm ci --loglevel=verbose
+                    npm run build --loglevel=verbose
                     ls -la
                 '''
             }
