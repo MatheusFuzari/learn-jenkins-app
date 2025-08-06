@@ -37,6 +37,12 @@ pipeline {
                     npm test 
                 '''
             }
+
+            post {
+                always {
+                    junit 'test-results/junit.xml'
+                }
+            }
         }
 
         stage('Deploy') {
@@ -52,12 +58,6 @@ pipeline {
                     '''
                 }
             }
-        }
-    }
-
-    post {
-        always {
-            junit 'test-results/junit.xml'
         }
     }
 }
